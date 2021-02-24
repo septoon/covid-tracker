@@ -1,0 +1,47 @@
+.header {
+  width: 100%;
+  height: 8vh;
+  background-color: rgb(132, 96, 230);
+}
+
+.header h1 {
+  color: #fff;
+}
+
+.covid-wrapper {
+  display: flex;
+}
+
+.countries-wrapper {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.country {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  cursor: pointer;
+  border: .5px solid #000;
+  transition: .2s;
+}
+
+.country:hover {
+  background-color: rgb(238, 212, 247);
+}
+
+.country:focus {
+  background-color: rgb(235, 201, 247);
+}
+
+.covid-data {
+}
+
+.covid-data div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  position: fixed;
+}
