@@ -21,7 +21,6 @@ const setCovidData = (payload) => ({type: SET_COVID_DATA, payload})
 
 export const getCovidData = () => async (dispatch) => {
   const response = await getCovidDataApi()
-  console.log(response)
   dispatch(setCovidData(response))
 }
 
