@@ -1,4 +1,7 @@
 @media screen and (max-width: 414px) {
+  .bar_option {
+    display: none;
+  }
   .card {
     width: 90%;
   }

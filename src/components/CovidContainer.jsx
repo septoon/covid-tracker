@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Header from './Header'
-import Countries from './Countries'
 import './styles.css'
-import { getCovidData } from '../redux/covid-reducer'
+import { getCovidData, setFilterCovidData } from '../redux/covid-reducer'
+import Cards from './Cards';
 
 class CovidContainer extends React.Component {
   componentDidMount() {
@@ -13,15 +13,16 @@ class CovidContainer extends React.Component {
 
     return (
       <>
-        <Header />
-        <Countries data={this.props.covid} />
+        <Header data={this.props.covid} />
+        <Cards data={this.props.covid} filterCovid={this.props.filterCovid} />
       </>
     ) 
   }
 }
 
 const mapStateToProps = (state) => ({
-  covid: state.covidData.covid
+  covid: state.covidData.covid,
+  filterCovid: state.covidData.filterCovid
 })
 
-export default connect(mapStateToProps, { getCovidData }) (CovidContainer)
+export default connect(mapStateToProps, { getCovidData, setFilterCovidData }) (CovidContainer)

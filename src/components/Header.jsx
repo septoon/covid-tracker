@@ -8,6 +8,9 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import { useDispatch } from 'react-redux';
+import { setFilterCovidData } from '../redux/covid-reducer';
+import './styles.media.css'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -51,13 +54,32 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const Header = () => {
-  
+const Header = props => {
+  const [inputText, setInputText] = React.useState("")
+  const dispatch = useDispatch()
+
+  const inputHandler = (e) => {
+    const lowerCase = e.target.value.toLowerCase()
+    setInputText(lowerCase)
+
+    
+    dispatch(setFilterCovidData(filteredData))
+  }
+  const filteredData = props.data.filter((el) => {
+    if (inputText === '') return el
+    else return el.country.toLowerCase().includes(inputText)
+  })
+
+  React.useEffect(() => {
+    dispatch(setFilterCovidData(filteredData))
+  })
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
+            className="bar_option"
             size="large"
             edge="start"
             color="inherit"
@@ -67,6 +89,7 @@ const Header = () => {
             <MenuIcon />
           </IconButton>
           <Typography
+            className="bar_option"
             variant="h6"
             noWrap
             component="div"
@@ -80,6 +103,7 @@ const Header = () => {
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
+              onChange={inputHandler}
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
