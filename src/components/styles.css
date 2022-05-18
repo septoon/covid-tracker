@@ -12,36 +12,29 @@
   display: flex;
 }
 
-.countries-wrapper {
-  width: 70%;
+.cards_wrapper {
+  width: 100vw;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
-.country {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
+.card {
+  width: 25%;
+  height: 250px;
+  text-align: left;
+  margin: 1%;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.10), 0 6px 6px rgba(0,0,0,0.13);
+  transition: .3s;
+}
+
+.card:hover {
   cursor: pointer;
-  border: .5px solid #000;
-  transition: .2s;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-.country:hover {
-  background-color: rgb(238, 212, 247);
-}
-
-.country:focus {
-  background-color: rgb(235, 201, 247);
-}
-
-.covid-data {
-}
-
-.covid-data div {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  position: fixed;
+.flag {
+  margin-left: 5px;
+  width: 25px;
 }

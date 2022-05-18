@@ -1,20 +1,15 @@
-import { getCountriesDataApi, getCovidDataApi } from "../api/api"
+import { getCovidDataApi } from "../api/api"
 
-const SET_COUNTRIES = 'covid/SET_COUNTRIES'
 const SET_COVID_DATA = 'covid/SET_COVID_DATA'
 
 const initialState = {
-  countries: [],
   covid: []
 }
 
 const covidReducer = (state = initialState, action) => {
   switch(action.type) {
-    case SET_COUNTRIES: {
-      return {...state, countries: action.countries}
-    }
     case SET_COVID_DATA: {
-      return {...state, covid: action.covidData}
+      return {...state, covid: action.payload}
     }
     default: {
       return state
@@ -22,14 +17,7 @@ const covidReducer = (state = initialState, action) => {
   }
 }
 
-const setCountries = (countries) => ({type: SET_COUNTRIES, countries})
-const setCovidData = (covidData) => ({type: SET_COVID_DATA, covidData})
-
-export const getCountriesData = () => async (dispatch) => {
-  const response = await getCountriesDataApi()
-  // console.log(response)
-  dispatch(setCountries(response))
-}
+const setCovidData = (payload) => ({type: SET_COVID_DATA, payload})
 
 export const getCovidData = () => async (dispatch) => {
   const response = await getCovidDataApi()
