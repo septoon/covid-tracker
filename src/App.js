@@ -1,13 +1,11 @@
 import './App.css';
-import CountriesContainer from './components/CountriesPageContainer';
+import CovidContainer from './components/CovidContainer';
 import Header from './components/Header';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      
-      <CountriesContainer />
+    <div className="App">      
+      <CovidContainer />
     </div>
   );
 }
