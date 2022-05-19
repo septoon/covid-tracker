@@ -2,7 +2,11 @@
   .bar_option {
     display: none;
   }
-  .card {
-    width: 90%;
+  .tables_wrapper>div {
+    width: 98%;
+  }
+
+  .tables_wrapper>div>thead, tbody, table {
+    max-width: 100%;
   }
 }

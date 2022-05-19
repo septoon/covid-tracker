@@ -8,10 +8,10 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Typography } from '@mui/material';
 import './styles.css'
-import './styles.css'
+import './styles.media.css'
 
-function createData(name, calories, fat, carbs) {
-  return { name, calories, fat, carbs };
+function createData(name, calories, fat) {
+  return { name, calories, fat };
 }
 
 
@@ -28,20 +28,20 @@ const DenseTable = (props) => {
         props.filterCovid.map((i, item) => {
           const rows = [
             createData('Deaths', i.deaths, i.todayDeaths),
-            createData('Cases', i.cases, i.todayCases, i.active),
+            createData('Cases', i.cases, i.todayCases),
             createData('Recovered', i.recovered, i.todayRecovered),
             createData('Critical', i.critical),
+            createData('Active', '', i.active),
           ];
           
           return (
-            <TableContainer component={Paper} key={item} className="table">
+            <TableContainer component={Paper} key={item} className="table" >
             <Table sx={{ minWidth: 390 }} size="small" aria-label="a dense table">
               <TableHead>
                 <TableRow>
                   <TableCell>{i.country} <img src={i.countryInfo.flag} alt="flag" className="flag"/></TableCell>
                   <TableCell align="right">All time</TableCell>
                   <TableCell align="right">Today</TableCell>
-                  <TableCell align="right">Active</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>

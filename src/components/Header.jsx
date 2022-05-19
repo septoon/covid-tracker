@@ -9,6 +9,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useDispatch } from 'react-redux';
 import { setFilterCovidData, setIsChecked } from '../redux/covid-reducer';
 import Switch from '@mui/material/Switch';
+import './styles.css'
 import './styles.media.css'
 
 const Search = styled('div')(({ theme }) => ({
@@ -71,7 +72,7 @@ const Header = props => {
 
   
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }} className="header">
       <AppBar position="static">
         <Toolbar>
           <Switch onClick={ () => props.isChecked ? dispatch(setIsChecked(false)) : dispatch(setIsChecked(true)) } />

@@ -1,7 +1,4 @@
 .header {
-  width: 100%;
-  height: 8vh;
-  background-color: rgb(132, 96, 230);
 }
 
 .header h1 {
@@ -16,12 +13,16 @@
   max-width: 100vw;
   display: flex;
   flex-direction: column;
-  padding: 2%;
+  align-items: center;
+  padding: 30px 1%;
+  overflow-x: hidden;
 }
 
-.table {
+.tables_wrapper>div {
+  width: 50%;
   margin-bottom: 20px;
-  width: 400px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  border-radius: 10px;
 }
 
 .card {
