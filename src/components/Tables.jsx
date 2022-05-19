@@ -32,6 +32,7 @@ const DenseTable = (props) => {
             createData('Recovered', i.recovered, i.todayRecovered),
             createData('Critical', i.critical),
           ];
+          
           return (
             <TableContainer component={Paper} key={item} className="table">
             <Table sx={{ minWidth: 390 }} size="small" aria-label="a dense table">
