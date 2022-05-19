@@ -12,11 +12,16 @@
   display: flex;
 }
 
-.cards_wrapper {
+.tables_wrapper {
   max-width: 100vw;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 2%;
+}
+
+.table {
+  margin-bottom: 20px;
+  width: 400px;
 }
 
 .card {
